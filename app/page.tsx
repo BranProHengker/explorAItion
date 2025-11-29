@@ -1,103 +1,108 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import { useState, useEffect, useCallback } from "react"
+import useEmblaCarousel from "embla-carousel-react"
+import { CoverSlide } from "@/components/cover-slide"
+import { ProblemSlide } from "@/components/problem-slide"
+import { PainSlide } from "@/components/pain-slide"
+import { SolutionSlide } from "@/components/solution-slide"
+import { ProductSlide } from "@/components/product-slide"
+import { HowItWorksSlide } from "@/components/how-it-works-slide"
+import { BusinessModelSlide } from "@/components/business-model-slide"
+import { CompetitionSlide } from "@/components/competition-slide"
+import { TeamSlide } from "@/components/team-slide"
+import { CTASlide } from "@/components/cta-slide"
+import { SlideNavigation } from "@/components/slide-navigation"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+
+const slides = [
+  { id: 1, component: CoverSlide },
+  { id: 2, component: ProblemSlide },
+  { id: 3, component: PainSlide },
+  { id: 4, component: SolutionSlide },
+  { id: 5, component: ProductSlide },
+  { id: 6, component: HowItWorksSlide },
+  { id: 7, component: BusinessModelSlide },
+  { id: 8, component: CompetitionSlide },
+  { id: 9, component: TeamSlide },
+  { id: 10, component: CTASlide },
+]
+
+export default function PitchDeck() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, duration: 30 })
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    setCurrentSlide(emblaApi.selectedScrollSnap())
+  }, [emblaApi])
+
+  useEffect(() => {
+    if (!emblaApi) return
+    onSelect()
+    emblaApi.on("select", onSelect)
+    return () => {
+      emblaApi.off("select", onSelect)
+    }
+  }, [emblaApi, onSelect])
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
+  const scrollTo = useCallback((index: number) => {
+    if (emblaApi) emblaApi.scrollTo(index)
+  }, [emblaApi])
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        scrollPrev()
+      } else if (event.key === "ArrowRight" || event.key === "ArrowDown" || event.key === " ") {
+        scrollNext()
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [scrollPrev, scrollNext])
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-background flex flex-col overflow-hidden">
+      <div className="flex-1 relative cursor-grab active:cursor-grabbing" ref={emblaRef}>
+        <div className="flex h-full touch-pan-y">
+          {slides.map((Slide) => (
+            <div className="flex-[0_0_100%] min-w-0 relative h-full" key={Slide.id}>
+              <div className="h-full w-full overflow-y-auto no-scrollbar px-4 md:px-8">
+                 <Slide.component />
+              </div>
+            </div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        <button
+          onClick={scrollPrev}
+          disabled={currentSlide === 0}
+          className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-secondary/80 hover:bg-secondary text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition-all z-10 backdrop-blur-sm shadow-lg border border-border/50"
+          aria-label="Previous slide"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button
+          onClick={scrollNext}
+          disabled={currentSlide === slides.length - 1}
+          className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-secondary/80 hover:bg-secondary text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition-all z-10 backdrop-blur-sm shadow-lg border border-border/50"
+          aria-label="Next slide"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      </div>
+
+      <SlideNavigation totalSlides={slides.length} currentSlide={currentSlide} onSlideChange={scrollTo} />
     </div>
-  );
+  )
 }
