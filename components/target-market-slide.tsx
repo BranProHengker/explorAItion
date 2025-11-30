@@ -43,7 +43,7 @@ export function TargetMarketSlide() {
                 <h4 className="text-lg font-bold text-gray-900 mb-1">Smart Starters</h4>
                 <p className="text-sm text-gray-600 mb-2 leading-relaxed">
                   Seller merintis yang sadar risiko. Membangun toko dari nol 
-                  harus pondasinya kuat, bukan "gampang roboh" karena hack.
+                  harus pondasinya kuat, bukan "gampang roboh" karena hack. CNBC
                 </p>
                 <div className="flex items-center gap-2 text-xs text-green-600 font-semibold">
                   <ArrowUpRight className="w-3 h-3" />
@@ -98,7 +98,7 @@ export function TargetMarketSlide() {
                 <div className="bg-red-50 border border-red-100 p-4 rounded-xl flex gap-3 items-start">
                    <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
                    <p className="text-xs text-red-800 font-medium italic leading-relaxed">
-                     "Tokopedia mengakui adanya upaya pencurian data, namun password diklaim aman (hash). Kenyataannya, hacker tetap bisa melakukan brute-force."
+                     "Tokopedia mengakui adanya upaya pencurian data, namun password diklaim aman (hash). Kenyataannya, hacker tetap bisa melakukan brute-force." -CNBC INDONESIA
                    </p>
                 </div>
 

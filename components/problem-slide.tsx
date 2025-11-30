@@ -38,11 +38,11 @@ export function ProblemSlide() {
           ))}
         </div>
 
-        <div className="bg-red-50 border-l-8 border-red-600 rounded-r-xl p-6 md:p-8 shadow-sm shrink-0">
+        {/* <div className="bg-red-50 border-l-8 border-red-600 rounded-r-xl p-6 md:p-8 shadow-sm shrink-0">
           <p className="text-lg md:text-xl italic text-slate-800 leading-relaxed font-serif">
             &quot;Kalau akun hilang 1 hari saja, Lebaran tahun ini saya tidak bisa beli tiket mudik.&quot;
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   )

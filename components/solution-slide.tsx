@@ -14,7 +14,7 @@ export function SolutionSlide() {
     },
     { 
       icon: Banknote, 
-      title: "Garansi Rp 500 Juta", 
+      title: "Garansi Uang Kembali", 
       description: "Berani ganti rugi finansial jika sistem kami gagal melindungi Anda." 
     },
   ]

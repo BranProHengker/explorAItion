@@ -6,7 +6,7 @@ export function HowItWorksSlide() {
       number: "01",
       icon: Link,
       title: "Hubungkan Akun",
-      description: "Kamu hubungkan akun Shopee/Tokopedia (API resmi, 30 detik)",
+      description: "Kamu hubungkan akun customers marketplace dan website ",
     },
     { 
       number: "02", 

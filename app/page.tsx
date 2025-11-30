@@ -12,7 +12,7 @@ import { TargetMarketSlide } from "@/components/target-market-slide"
 import { BusinessModelSlide } from "@/components/business-model-slide"
 import { CompetitionSlide } from "@/components/competition-slide"
 import { TeamSlide } from "@/components/team-slide"
-import { CTASlide } from "@/components/cta-slide"
+import { ClosingSlide } from "@/components/closing-slide"
 import { SlideNavigation } from "@/components/slide-navigation"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -27,7 +27,7 @@ const slides = [
   { id: 8, component: BusinessModelSlide },
   { id: 9, component: CompetitionSlide },
   { id: 10, component: TeamSlide },
-  { id: 11, component: CTASlide },
+  { id: 11, component: ClosingSlide },
 ]
 
 export default function PitchDeck() {

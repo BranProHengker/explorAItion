@@ -10,10 +10,10 @@ export function CompetitionSlide() {
       name: "Medium Security",
       features: { monitoring: true, autoBlock: true, human: false, guarantee: false, focus: false },
     },
-    {
-      name: "Agency Security",
-      features: { monitoring: true, autoBlock: false, human: "partial", guarantee: false, focus: false },
-    },
+    // {
+    //   name: "Agency Security",
+    //   features: { monitoring: true, autoBlock: false, human: "partial", guarantee: false, focus: false },
+    // },
     {
       name: "Teman Pelindung",
       features: { monitoring: true, autoBlock: true, human: true, guarantee: true, focus: true },
@@ -89,7 +89,7 @@ export function CompetitionSlide() {
                         </span>
                         {comp.highlight && (
                             <span className="text-[8px] font-bold text-white bg-accent px-1.5 py-0.5 rounded-full w-fit mt-0.5 shadow-sm">
-                            GARANSI 500JT
+                            GARANSI Uang Kemabali
                             </span>
                         )}
                       </div>
@@ -101,7 +101,7 @@ export function CompetitionSlide() {
                     </td>
                   ))}
                 </tr>
-              ))}
+              ))} 
             </tbody>
           </table>
         </div>

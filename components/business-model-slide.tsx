@@ -4,14 +4,14 @@ export function BusinessModelSlide() {
   const tiers = [
     {
       name: "Basic",
-      price: "8,8",
+      price: "-",
       subtitle: "GMV < Rp 300 jt",
       features: ["1 akun marketplace", "Monitoring 24/7", "Auto-block serangan", "Ganti rugi Rp 100 jt"],
       highlight: false,
     },
     {
       name: "Pro",
-      price: "22,8",
+      price: "-",
       subtitle: "GMV Rp 300 jt – 2 M",
       features: [
         "3 akun marketplace",
@@ -98,7 +98,7 @@ export function BusinessModelSlide() {
                 <p className="text-xs text-accent/80 font-medium uppercase tracking-wider">Early Bird (50 slot)</p>
             </div>
             <div>
-              <p className="text-xl font-bold text-slate-900">Rp 6,8 juta/bln</p>
+              <p className="text-xl font-bold text-slate-900">-</p>
               <p className="text-[10px] text-slate-500">*Bayar tahunan</p>
             </div>
           </div>
@@ -109,7 +109,7 @@ export function BusinessModelSlide() {
                 <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Target Bulan 3</p>
              </div>
              <div>
-              <p className="text-xl font-bold text-slate-900">MRR Rp 1,5–2 M</p>
+              <p className="text-xl font-bold text-slate-900">-</p>
                <p className="text-[10px] text-slate-500">120 Customer</p>
              </div>
           </div>
@@ -120,7 +120,7 @@ export function BusinessModelSlide() {
                 <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">LTV per Customer</p>
              </div>
              <div>
-              <p className="text-xl font-bold text-slate-900">{"> "}Rp 250 juta</p>
+              <p className="text-xl font-bold text-slate-900">{"> "}-</p>
               <p className="text-[10px] text-slate-500">Retention rate tinggi</p>
              </div>
           </div>
