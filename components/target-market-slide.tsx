@@ -59,22 +59,22 @@ export function TargetMarketSlide() {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
                 <ShieldAlert className="w-8 h-8 text-red-600" />
-                <h3 className="text-2xl font-bold text-slate-800">Ancaman Nyata Global</h3>
+                <h3 className="text-2xl font-bold text-slate-800">Fakta Kebocoran Data Indonesia</h3>
               </div>
 
               <div className="space-y-8">
                 {/* Stat 1 */}
                 <div>
                   <div className="flex justify-between items-end mb-3">
-                    <span className="text-slate-600 font-medium">Kenaikan Kasus Account Takeover (2024)</span>
-                    <span className="text-4xl font-black text-red-600">+307%</span>
+                    <span className="text-slate-600 font-medium">Kasus Kebocoran Data Tokopedia (2020)</span>
+                    <span className="text-4xl font-black text-red-600">91 Juta</span>
                   </div>
                   <div className="w-full h-4 bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-red-600 w-[85%] rounded-full relative overflow-hidden">
+                    <div className="h-full bg-red-600 w-[91%] rounded-full relative overflow-hidden">
                         <div className="absolute inset-0 bg-white/30 w-full animate-[shimmer_2s_infinite]" />
                     </div>
                   </div>
-                  <p className="text-xs text-slate-500 mt-2 text-right font-mono uppercase tracking-wide">Sumber: Laporan Cybersecurity E-commerce Global</p>
+                  <p className="text-xs text-slate-500 mt-2 text-right font-mono uppercase tracking-wide">Sumber: Cyble & Hackread Report</p>
                 </div>
 
                 {/* Stat 2 - Donut Chart Representation using text/css */}
@@ -83,14 +83,14 @@ export function TargetMarketSlide() {
                      {/* Simple CSS Circle Chart */}
                      <svg className="w-full h-full transform -rotate-90">
                         <circle cx="48" cy="48" r="40" stroke="currentColor" strokeWidth="8" fill="transparent" className="text-slate-100" />
-                        <circle cx="48" cy="48" r="40" stroke="currentColor" strokeWidth="8" fill="transparent" strokeDasharray="251.2" strokeDashoffset="37.68" className="text-red-600" />
+                        <circle cx="48" cy="48" r="40" stroke="currentColor" strokeWidth="8" fill="transparent" strokeDasharray="251.2" strokeDashoffset="25.12" className="text-red-600" />
                      </svg>
-                     <span className="absolute text-xl font-bold text-slate-900">85%</span>
+                     <span className="absolute text-xl font-bold text-slate-900">100%</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-1 text-lg">Seller Tidak Bisa Pulih</h4>
+                    <h4 className="font-bold text-slate-900 mb-1 text-lg">Resiko Kehilangan Aset</h4>
                     <p className="text-sm text-slate-600 leading-relaxed">
-                      85% seller yang kena hack tanpa bantuan profesional <span className="text-red-600 font-bold underline decoration-red-200 decoration-2 underline-offset-2">kehilangan akun selamanya</span>.
+                      Data email, password hash, dan nama lengkap <span className="text-red-600 font-bold">dijual bebas di Dark Web</span> seharga $5,000.
                     </p>
                   </div>
                 </div>
@@ -98,7 +98,7 @@ export function TargetMarketSlide() {
                 <div className="bg-red-50 border border-red-100 p-5 rounded-xl flex gap-3 items-start">
                    <AlertCircle className="w-6 h-6 text-red-600 shrink-0 mt-0.5" />
                    <p className="text-sm text-red-800 font-medium italic leading-relaxed">
-                     "Marketplace tidak bertanggung jawab atas kelalaian keamanan pengguna."
+                     "Tokopedia mengakui adanya upaya pencurian data, namun password diklaim aman (hash). Kenyataannya, hacker tetap bisa melakukan brute-force."
                    </p>
                 </div>
 

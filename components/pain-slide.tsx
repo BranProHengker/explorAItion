@@ -4,7 +4,7 @@ export function PainSlide() {
   const quotes = [
     { text: "Rugi Rp 380 juta dalam 2 hari. Nangis.", author: "Dita", role: "Seller Fashion Surabaya" },
     { text: "Bangun jam 4 pagi, toko sudah dijual orang. Langsung pingsan.", author: "Mas Budi", role: "Seller Makanan" },
-    { text: "Shopee cuma bilang 'ganti password'. Tidak ada yang bantu.", author: "Rian", role: "Seller Elektronik" },
+    { text: "Saldo Rekening ku tiba tiba hilang ", author: "Rian", role: "Seller Elektronik" },
   ]
 
   return (
