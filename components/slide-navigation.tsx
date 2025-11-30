@@ -26,7 +26,7 @@ export function SlideNavigation({ totalSlides, currentSlide, onSlideChange }: Sl
           ))}
         </div>
         <span className="text-muted-foreground text-sm hidden sm:block text-right shrink-0">
-          Marketplace Shield © 2025
+          Teman Pelindung © 2025
         </span>
       </div>
     </div>

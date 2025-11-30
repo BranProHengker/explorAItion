@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
-  title: "Marketplace Shield - Pitch Deck",
+  title: "Teman Pelindung - Pitch Deck",
   description: "Asuransi + Benteng Anti-Hack untuk Akun Shopee & Tokopedia",
   generator: "v0.app",
   icons: {

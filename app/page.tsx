@@ -8,6 +8,7 @@ import { PainSlide } from "@/components/pain-slide"
 import { SolutionSlide } from "@/components/solution-slide"
 import { ProductSlide } from "@/components/product-slide"
 import { HowItWorksSlide } from "@/components/how-it-works-slide"
+import { TargetMarketSlide } from "@/components/target-market-slide"
 import { BusinessModelSlide } from "@/components/business-model-slide"
 import { CompetitionSlide } from "@/components/competition-slide"
 import { TeamSlide } from "@/components/team-slide"
@@ -22,10 +23,11 @@ const slides = [
   { id: 4, component: SolutionSlide },
   { id: 5, component: ProductSlide },
   { id: 6, component: HowItWorksSlide },
-  { id: 7, component: BusinessModelSlide },
-  { id: 8, component: CompetitionSlide },
-  { id: 9, component: TeamSlide },
-  { id: 10, component: CTASlide },
+  { id: 7, component: TargetMarketSlide },
+  { id: 8, component: BusinessModelSlide },
+  { id: 9, component: CompetitionSlide },
+  { id: 10, component: TeamSlide },
+  { id: 11, component: CTASlide },
 ]
 
 export default function PitchDeck() {
