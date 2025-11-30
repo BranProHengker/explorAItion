@@ -9,37 +9,37 @@ export function ProblemSlide() {
   ]
 
   return (
-    <div className="min-h-[calc(100vh-80px)] flex flex-col justify-center px-6 py-12 bg-background">
-      <div className="max-w-6xl mx-auto w-full">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-red-50 text-red-600 rounded-full text-sm font-semibold mb-6 uppercase tracking-wide">
+    <div className="h-screen w-full flex flex-col justify-center px-6 py-8 bg-background overflow-hidden">
+      <div className="max-w-6xl mx-auto w-full flex flex-col h-full justify-center">
+        <div className="text-center mb-8 shrink-0">
+          <span className="inline-block px-4 py-2 bg-red-50 text-red-600 rounded-full text-sm font-semibold mb-4 uppercase tracking-wide">
             The Problem
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance text-slate-900 leading-tight">
-            <span className="text-red-600 text-6xl font-black block mb-2">87%</span> 
+          <h2 className="text-3xl md:text-5xl font-bold mb-2 text-balance text-slate-900 leading-tight">
+            <span className="text-red-600 text-5xl md:text-6xl font-black block mb-2">87%</span> 
             Seller Marketplace Pernah Rugi Karena Hack
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 gap-4 mb-8 shrink-0">
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="bg-white border border-slate-200 rounded-2xl p-8 flex items-start gap-5 hover:shadow-md transition-all duration-300 group"
+              className="bg-white border border-slate-200 rounded-xl p-6 flex items-start gap-4 hover:shadow-md transition-all duration-300 group"
             >
-              <div className="p-4 bg-red-50 rounded-xl shrink-0 group-hover:bg-red-100 transition-colors">
-                <problem.icon className="w-8 h-8 text-red-600" />
+              <div className="p-3 bg-red-50 rounded-xl shrink-0 group-hover:bg-red-100 transition-colors">
+                <problem.icon className="w-6 h-6 text-red-600" />
               </div>
               <div>
-                 <h3 className="text-lg font-bold text-slate-900 mb-2">{problem.title}</h3>
-                 <p className="text-base text-slate-600 leading-relaxed">{problem.text}</p>
+                 <h3 className="text-base font-bold text-slate-900 mb-1">{problem.title}</h3>
+                 <p className="text-sm text-slate-600 leading-relaxed">{problem.text}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="bg-red-50 border-l-8 border-red-600 rounded-r-xl p-8 md:p-10 shadow-sm">
-          <p className="text-xl md:text-2xl italic text-slate-800 leading-relaxed font-serif">
+        <div className="bg-red-50 border-l-8 border-red-600 rounded-r-xl p-6 md:p-8 shadow-sm shrink-0">
+          <p className="text-lg md:text-xl italic text-slate-800 leading-relaxed font-serif">
             &quot;Kalau akun hilang 1 hari saja, Lebaran tahun ini saya tidak bisa beli tiket mudik.&quot;
           </p>
         </div>

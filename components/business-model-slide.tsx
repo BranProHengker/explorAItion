@@ -39,49 +39,49 @@ export function BusinessModelSlide() {
   ]
 
   return (
-    <div className="min-h-[calc(100vh-80px)] flex flex-col justify-center px-6 py-12 bg-background">
-      <div className="max-w-6xl mx-auto w-full">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6 uppercase tracking-wide">
+    <div className="h-screen w-full flex flex-col justify-center px-6 py-8 bg-background overflow-hidden">
+      <div className="max-w-6xl mx-auto w-full flex flex-col h-full justify-center">
+        <div className="text-center mb-8 shrink-0">
+          <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4 uppercase tracking-wide">
             Business Model
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground tracking-tight">Subscription Bulanan</h2>
-          <p className="text-xl text-muted-foreground font-light">Model bisnis yang terukur dan tervalidasi.</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-2 text-foreground tracking-tight">Subscription Bulanan</h2>
+          <p className="text-lg text-muted-foreground font-light">Model bisnis yang terukur dan tervalidasi.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16 items-start">
+        <div className="grid md:grid-cols-3 gap-4 mb-8 items-start shrink-0">
           {tiers.map((tier, index) => (
             <div
               key={index}
-              className={`relative rounded-2xl p-8 transition-all duration-300 ${
+              className={`relative rounded-2xl p-6 transition-all duration-300 ${
                 tier.highlight
                   ? "bg-primary text-white shadow-xl scale-105 z-10 ring-1 ring-primary/50"
-                  : "bg-white border border-slate-200 text-slate-800 shadow-sm hover:shadow-md hover:-translate-y-1"
+                  : "bg-white border border-slate-200 text-slate-800 shadow-sm hover:shadow-md"
               }`}
             >
               {tier.highlight && (
-                <div className="absolute top-0 right-0 -mt-3 -mr-3 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                <div className="absolute top-0 right-0 -mt-3 -mr-3 bg-accent text-white px-2 py-0.5 rounded-full text-[10px] font-bold shadow-sm">
                   MOST POPULAR
                 </div>
               )}
-              <h3 className={`text-2xl font-bold mb-1 ${tier.highlight ? "text-white" : "text-slate-900"}`}>{tier.name}</h3>
-              <p className={`text-sm mb-6 ${tier.highlight ? "text-white/80" : "text-slate-500"}`}>{tier.subtitle}</p>
+              <h3 className={`text-xl font-bold mb-0.5 ${tier.highlight ? "text-white" : "text-slate-900"}`}>{tier.name}</h3>
+              <p className={`text-xs mb-4 ${tier.highlight ? "text-white/80" : "text-slate-500"}`}>{tier.subtitle}</p>
               
-              <div className="mb-8 pb-8 border-b border-current/10">
+              <div className="mb-4 pb-4 border-b border-current/10">
                 <div className="flex items-baseline gap-1">
-                  {tier.price !== "Custom" && <span className="text-lg font-semibold">Rp</span>}
-                  <span className="text-4xl font-bold">{tier.price}</span>
-                  {tier.price !== "Custom" && <span className={`text-sm font-medium ${tier.highlight ? "text-white/80" : "text-slate-500"}`}>jt/bln</span>}
+                  {tier.price !== "Custom" && <span className="text-sm font-semibold">Rp</span>}
+                  <span className="text-3xl font-bold">{tier.price}</span>
+                  {tier.price !== "Custom" && <span className={`text-xs font-medium ${tier.highlight ? "text-white/80" : "text-slate-500"}`}>jt/bln</span>}
                 </div>
               </div>
 
-              <ul className="space-y-4">
+              <ul className="space-y-2">
                 {tier.features.map((feature, fIndex) => (
-                  <li key={fIndex} className="flex items-start gap-3">
+                  <li key={fIndex} className="flex items-start gap-2">
                     <div className={`mt-0.5 rounded-full p-0.5 ${tier.highlight ? "bg-white/20" : "bg-primary/10"}`}>
                         <Check className={`w-3 h-3 ${tier.highlight ? "text-white" : "text-primary"}`} />
                     </div>
-                    <span className={`text-sm leading-relaxed ${tier.highlight ? "text-white/90" : "text-slate-600"}`}>
+                    <span className={`text-xs leading-relaxed ${tier.highlight ? "text-white/90" : "text-slate-600"}`}>
                       {feature}
                     </span>
                   </li>
@@ -91,32 +91,38 @@ export function BusinessModelSlide() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-accent/5 border border-accent/20 rounded-xl p-6 flex flex-col justify-between">
-            <div>
-                <Sparkles className="w-8 h-8 text-accent mb-4" />
-                <p className="text-sm text-accent/80 font-medium uppercase tracking-wider mb-1">Early Bird (50 slot)</p>
+        <div className="grid md:grid-cols-3 gap-4 shrink-0">
+          <div className="bg-accent/5 border border-accent/20 rounded-xl p-4 flex flex-col justify-between h-full">
+            <div className="flex items-center gap-2 mb-2">
+                <Sparkles className="w-5 h-5 text-accent" />
+                <p className="text-xs text-accent/80 font-medium uppercase tracking-wider">Early Bird (50 slot)</p>
             </div>
-            <p className="text-2xl font-bold text-slate-900">Rp 6,8 juta/bln</p>
-            <p className="text-xs text-slate-500 mt-1">*Bayar tahunan</p>
+            <div>
+              <p className="text-xl font-bold text-slate-900">Rp 6,8 juta/bln</p>
+              <p className="text-[10px] text-slate-500">*Bayar tahunan</p>
+            </div>
           </div>
           
-          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col justify-between">
-             <div>
-                <TrendingUp className="w-8 h-8 text-primary mb-4" />
-                <p className="text-sm text-slate-500 font-medium uppercase tracking-wider mb-1">Target Bulan 3</p>
+          <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col justify-between h-full">
+             <div className="flex items-center gap-2 mb-2">
+                <TrendingUp className="w-5 h-5 text-primary" />
+                <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Target Bulan 3</p>
              </div>
-            <p className="text-2xl font-bold text-slate-900">MRR Rp 1,5–2 M</p>
-             <p className="text-xs text-slate-500 mt-1">120 Customer</p>
+             <div>
+              <p className="text-xl font-bold text-slate-900">MRR Rp 1,5–2 M</p>
+               <p className="text-[10px] text-slate-500">120 Customer</p>
+             </div>
           </div>
           
-          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col justify-between">
-             <div>
-                <Users className="w-8 h-8 text-primary mb-4" />
-                <p className="text-sm text-slate-500 font-medium uppercase tracking-wider mb-1">LTV per Customer</p>
+          <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col justify-between h-full">
+             <div className="flex items-center gap-2 mb-2">
+                <Users className="w-5 h-5 text-primary" />
+                <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">LTV per Customer</p>
              </div>
-            <p className="text-2xl font-bold text-slate-900">{"> "}Rp 250 juta</p>
-            <p className="text-xs text-slate-500 mt-1">Retention rate tinggi</p>
+             <div>
+              <p className="text-xl font-bold text-slate-900">{"> "}Rp 250 juta</p>
+              <p className="text-[10px] text-slate-500">Retention rate tinggi</p>
+             </div>
           </div>
         </div>
       </div>
