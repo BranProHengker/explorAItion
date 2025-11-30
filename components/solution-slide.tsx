@@ -51,14 +51,14 @@ export function SolutionSlide() {
             </div>
           ))}
         </div>
-
+{/* 
         <div className="bg-slate-900 rounded-2xl p-8 text-center relative overflow-hidden shrink-0">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] pointer-events-none" />
           <Moon className="w-12 h-12 mx-auto mb-4 text-primary/80 relative z-10" />
           <p className="text-xl md:text-3xl font-bold leading-tight text-white relative z-10 font-serif italic">
             &quot;Tidur nyenyak. Besok bangun, tokomu masih ada.&quot;
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   )
